@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<product productid="hide_promote_to_article" active="1">
+	<title><![CDATA[Hide "promote to article" button]]></title>
+	<description />
+	<version>0.1</version>
+	<url />
+	<versioncheckurl />
+	<apm_releasedate></apm_releasedate>
+	<apm_author></apm_author>
+	<apm_relatedurl></apm_relatedurl>
+	<apm_extrainfo></apm_extrainfo>
+	<apm_extraedit></apm_extraedit>
+	<dependencies>
+	</dependencies>
+	<codes>
+	</codes>
+	<templates>
+	</templates>
+	<stylevardfns>
+	</stylevardfns>
+	<stylevars>
+	</stylevars>
+	<plugins>
+		<plugin active="1" executionorder="5">
+			<title>Hide button</title>
+			<hookname>global_bootstrap_complete</hookname>
+			<phpcode><![CDATA[if (THIS_SCRIPT != 'vbcms')
+{
+    global $vbulletin;
+    $vbulletin->userinfo['permissions']['cms']['canpublish'][0] = -1;
+}]]></phpcode>
+		</plugin>
+	</plugins>
+	<phrases>
+	</phrases>
+	<options>
+	</options>
+	<helptopics>
+	</helptopics>
+	<cronentries>
+	</cronentries>
+	<faqentries>
+	</faqentries>
+	<templateedits>
+	</templateedits>
+</product>
